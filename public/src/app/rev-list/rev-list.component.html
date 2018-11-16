@@ -1,0 +1,24 @@
+<div class="container">
+
+<div class="container">
+    <h3>Reviews for {{foundRest.name}} </h3>
+    <button type="submit" class="btn btn-primary" (click)="onNewRev(foundRest._id)">New Review</button>    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Customer</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let r of foundRest.reviews">
+                  <td>{{r.name}}</td>
+                  <td>{{r.stars}}</td>
+                  <td> {{r.review}} </td>
+                </tr>
+        </tbody>
+      </table>
+</div>
+
+</div>

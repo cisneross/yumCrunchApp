@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="container" *ngIf="errorMesgs">
+        <p *ngFor="let m of errorMesgs">Error: {{m}}</p>
+      </div>
+      <h3>Edit Restaurant</h3>
+  <form (submit)="onSubmit(rest._id)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Restaurant Name: </label>
+      <input type="text" [(ngModel)]="rest.name" class="form-control" name="rname" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Cuisine: </label>
+      <input type="text" [(ngModel)]="rest.cuisine" class="form-control" name="cname" id="exampleInputPassword1" placeholder="Enter Cuisine">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [routerLink]="['/restaraunts']">Cancel</button>
+
+
+  </form>
+</div>

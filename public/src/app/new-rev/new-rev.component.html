@@ -1,0 +1,33 @@
+<div class="container">
+  <h3>Write review for {{rest.name}}</h3>
+    <div class="container" *ngIf="errorMesgs">
+        <p *ngFor="let m of errorMesgs">Error: {{m}}</p>
+      </div>
+
+  <form (submit)="onSubmit(rest._id)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name: </label>
+      <input type="text" [(ngModel)]="newRev.name" class="form-control" name="rname" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label for="inputState">Stars</label>
+        <select id="inputState" [(ngModel)]="newRev.stars" name="newStar" class="form-control">
+          <option >1</option>
+          <option >2</option>
+          <option >3</option>
+          <option >4</option>
+          <option >5</option>
+        </select>
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Review: </label>
+      <input type="text" [(ngModel)]="newRev.review" class="form-control" name="cname" id="exampleInputPassword1" placeholder="Write review">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [routerLink]="['/restaraunts', rest._id]">Cancel</button>
+
+
+  </form>
+</div>
